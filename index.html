@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Weight Converter</h1>
+
+        <form action="" id='weightConverter'>
+            <input type="number" placeholder="Enter value of Kg" class="inputNumber">
+
+            <div class="wrapper">
+                <div class="option toggler">Kg</div>
+                <div class="option one">Kg<input type="radio" name="unit" id="kilograms" class="inputCheck" checked></div>
+                <div class="option two">G<input type="radio" name="unit" id="grams"  class="inputCheck"></div>
+                <div class="option three">Lb<input type="radio" name="unit" id="pounds" class="inputCheck"></div>
+                <div class="option four">Oz<input type="radio" name="unit" id="ounces" class="inputCheck"></div>
+            </div>
+        </form>
+        <div class="cardContainer">
+        <div class="card kg">
+            <h3>Kilograms (Kg): <span class="kgOutput"></span> </h3>
+            <h4>Formula <span class="kgFormula"></span></h4>
+        </div>
+
+        <div class="card g">
+            <h3>Grams (G): <span class="gOutput"></span> </h3>
+            <h4>Formula <span class="gFormula"></span></h4>
+        </div>
+
+        <div class="card lb">
+            <h3>Pounds (Lb):<span class="lbOutput"></span> </h3>
+            <h4>Formula <span class="lbFormula"></span></h4>
+        </div>
+
+        <div class="card oz">
+            <h3>Onces (Oz):<span class="ozOutput"></span> </h3>
+            <h4>Formula <span class="ozFormula"></span></h4>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

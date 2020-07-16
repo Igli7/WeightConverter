@@ -1,0 +1,225 @@
+$blueish: #00848d;
+$background: #2b303a;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    color: $blueish;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 2.5em;
+        padding-top: 2em;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+}
+
+// Form / Input
+#weightConverter {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 50px;
+    margin-top: 3em;
+    border-top: 4px solid $blueish;
+    border-bottom: 4px solid $blueish;
+    max-width: 600px;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        width: 4px;
+        position: relative;
+        display: inline-block;
+        background-color: $blueish;
+        height: 0;
+        transition: height 1.25s ease;
+    }
+    &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    &:focus-within::before,
+    &:focus-within::after {
+        height: 100%;
+    }
+
+    .inputNumber {
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: $background;
+        color: white;
+        margin-left: 1.5em;
+        appearance: none;
+    }
+    .inputNumber::-webkit-outer-spin-button,
+    .inputNumber::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+// Animated Input
+.animated::before,
+.animated::after {
+    height: 100% !important;
+}
+
+// Selector
+.wrapper {
+    position: relative;
+    min-width: 60px;
+    right: 0;
+
+    .toggler {
+        z-index: 99;
+        background-color: $background;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 10px;
+            position: absolute;
+            top: 48%;
+            right: 20%;
+            border: 1px solid white;
+            background-color: white;
+            z-index: 99;
+            transition: all 0.7s ease;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: $background !important;
+        }
+
+        &::after {
+            transform: translate(-4px) rotate(45deg);
+        }
+        &::before {
+            transform: translate(3px) rotate(-45deg);
+        }
+    }
+    .toggler.moved::before {
+        transform: rotate(45deg);
+    }
+    .toggler.moved::after {
+        transform: rotate(-45deg);
+    }
+
+    .option {
+        width: 60px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: white;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        background-color: $background;
+        margin-bottom: 0.5em;
+        transition: transform 0.8s ease;
+
+        input {
+            width: 100%;
+            position: absolute;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        &:hover {
+            background-color: $blueish;
+        }
+    }
+
+    .one.moved {
+        transform: translateY(30px);
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .two.moved {
+        transform: translateY(60px);
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .three.moved {
+        transform: translateY(90px);
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .four.moved {
+        transform: translateY(120px);
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+}
+
+// Cards
+.cardContainer{
+    width: 90%;
+    max-width: 600px;
+    padding-bottom: 5em;
+}
+
+.card {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 2em;
+    width: 100%;
+    max-width: 600px;
+    color: white;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    background-color: $blueish;
+    box-shadow: 9px 11px 2px 3px #444a55;
+    visibility: hidden;
+
+    h3,
+    h4 {
+        font-size: 20px;
+        font-weight: 800;
+
+        span {
+            font-size: 18px;
+            font-weight: 200;
+        }
+    }
+    h3 {
+        padding-bottom: 1em;
+        padding-left: 1em;
+        span {
+            padding-left: 0.5em;
+        }
+    }
+    h4 {
+        text-align: center;
+        display: block;
+
+        span {
+            display: block;
+            font-size: 20px;
+            padding-top: 0.5em;
+        }
+    }
+}
+
